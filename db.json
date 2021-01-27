@@ -1,0 +1,22 @@
+{
+  "img": "./images/tempestade.jpg",
+  "title": "The Vikings Quiz",
+  "description": "Você sabe tudo sobre os Vikings?",
+  "questions": [],
+  "external": [""],
+  "theme": {
+    "colors": {
+      "primary": "#0a0908",
+      "secondary": "#22333b",
+      "tertiary": "#5e503f",
+      "text": "#86bbd8",
+      "text2": "#bc4749",
+      "mainBg": "#a9927d",
+      "contrastText": "#f2f4f3",
+      "wrong": "#FE5F55",
+      "success": "#73A942"
+    },
+    "borderRadius": "4px"
+  }
+}
+
