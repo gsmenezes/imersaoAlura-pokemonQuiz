@@ -4,6 +4,7 @@ const Widget = styled.div`
   margin: 24px 0;
   border: 1px solid ${({ theme }) => theme.colors.primary};
   background-color: #33658a;
+  opacity: 0.9;
   border-radius: 4px;
   overflow: hidden;
 
@@ -34,6 +35,12 @@ Widget.Content = styled.div`
     list-style: none;
     padding: 0;
   }
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.contrastText};
+  }
+
 `;
 
 Widget.Header = styled.div`

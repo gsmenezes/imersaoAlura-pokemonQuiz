@@ -1,4 +1,6 @@
+import React, { useState } from 'react';
 import styled from "styled-components";
+import { useRouter } from 'next/router';
 import db from "../db.json";
 
 import Footer from '../src/components/Footer';
@@ -20,6 +22,9 @@ const QuizContainer = styled.div`
 `;
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = useState('');
+
   return (
     <QuizBackground backgroundImage={db.img}>
       <QuizContainer>
@@ -29,7 +34,16 @@ export default function Home() {
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>{db.description}</p>
+            <form onSubmit={ function (infoEvent) {
+              infoEvent.preventDefault();
+              router.push(`/quiz?name=${name}`);
+            }}>
+              <input placeholder="Diz aí seu nome ;)" onChange={function (infoEvent){
+                console.log(infoEvent.target.value);
+                setName(infoEvent.target.value);
+              }}/>
+              <button type="submit" disabled={name.length === 0}>Vamos jogar!</button>
+            </form>
           </Widget.Content>
         </Widget>
         <Widget>
@@ -37,12 +51,14 @@ export default function Home() {
             <h1>Quizes da Galera</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>Quiz do Naruto</p>
+            <a href="https://naruto-quiz.llofyy.vercel.app/" target="_blank" rel="noreferrer"> <p>Naruto Quiz</p> </a>
+            <a href="https://historyquiz.vercel.app/" target="_blank" rel="noreferrer"><p>History Quiz</p></a>
+            <a href="https://hogwarts-quiz.juliocarvalhos.vercel.app/" target="_blank" rel="noreferrer"><p>Hogwarts Quiz</p></a>
           </Widget.Content>
         </Widget>
         <Footer />
       </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/gsmenezes" />
+      <GitHubCorner projectUrl="https://github.com/gsmenezes"/>
     </QuizBackground>
   );
 }

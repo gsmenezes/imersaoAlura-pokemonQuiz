@@ -6,9 +6,10 @@ const FooterWrapper = styled.footer`
   display: flex;
   align-items: center;
   border-radius: 4px;
+  opacity: 0.8;
   img {
     width: 58px;
-    margin-right: 23px;
+    margin-right: 21px;
   }
 
   a {
@@ -23,12 +24,17 @@ const FooterWrapper = styled.footer`
       text-decoration: underline;
     }
   }
+
+  p {
+    font-size: 13.5px;
+    text-align: center;
+  }
 `;
 
 export default function Footer(props) {
   return (
     <FooterWrapper {...props}>
-      <a href="https://www.alura.com.br/">
+      <a href="https://www.alura.com.br/" target="_blank" rel="noreferrer">
         <img
           src="https://www.alura.com.br/assets/img/alura-logo-white.1570550707.svg"
           alt="Logo Alura"
@@ -36,7 +42,7 @@ export default function Footer(props) {
       </a>
       <p>
         Orgulhosamente criado durante a
-        <a href="https://www.alura.com.br/">
+        <a href="https://www.alura.com.br/" target="_blank" rel="noreferrer">
           <span> Imersão React da Alura</span>
         </a>
       </p>
