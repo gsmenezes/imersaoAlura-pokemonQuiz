@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
 
 * {
 box-sizing: border-box;
+
 }
 
   body {
@@ -15,6 +16,7 @@ box-sizing: border-box;
   flex-direction: column;
   font-family: 'Capriola', sans-serif;
   color: ${({ theme }) => theme.colors.contrastText};
+  overflow: hidden;
   }
 
   html, body {

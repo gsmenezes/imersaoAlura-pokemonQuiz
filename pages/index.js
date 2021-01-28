@@ -1,32 +1,22 @@
 import React, { useState } from 'react';
-import styled from "styled-components";
 import { useRouter } from 'next/router';
 import db from "../db.json";
 
+import Button from '../src/components/Button';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
+import Input from '../src/components/Input';
 import QuizBackground from '../src/components/QuizBackground';
+import QuizContainer from '../src/components/QuizContainer';
 import QuizLogo from '../src/components/QuizLogo';
 import Widget from "../src/components/Widget";
-
-
-const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
 
 export default function Home() {
   const router = useRouter();
   const [name, setName] = useState('');
 
   return (
-    <QuizBackground backgroundImage={db.img}>
+    <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <QuizLogo />
         <Widget>
@@ -38,11 +28,12 @@ export default function Home() {
               infoEvent.preventDefault();
               router.push(`/quiz?name=${name}`);
             }}>
-              <input placeholder="Diz aí seu nome ;)" onChange={function (infoEvent){
-                console.log(infoEvent.target.value);
-                setName(infoEvent.target.value);
-              }}/>
-              <button type="submit" disabled={name.length === 0}>Vamos jogar!</button>
+              <Input
+              name="nomeDoUsuario"
+              placeholder="Diz aí seu nome ;)"
+              value={name}
+              onChange={(infoEvent) => setName(infoEvent.target.value)}/>
+              <Button type="submit" disabled={name.length === 0}>Vamos jogar!</Button>
             </form>
           </Widget.Content>
         </Widget>
