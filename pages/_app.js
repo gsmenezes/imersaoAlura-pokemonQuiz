@@ -19,6 +19,7 @@ box-sizing: border-box;
   overflow: hidden;
   }
 
+
   html, body {
   min-height: 100vh;
   }
@@ -28,6 +29,12 @@ box-sizing: border-box;
   display: flex;
   flex-direction: column;
   }
+
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+}
 `;
 
 const theme = db.theme;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 import db from '../db.json';
 import AlternativesForm from '../src/components/Alternatives';
@@ -9,22 +10,29 @@ import Widget from '../src/components/Widget';
 
 function ResultWidget({ results }) {
   return (
-    <Widget>
+    <Widget as={motion.section}
+    transition={{ delay: 0.5, duration: 0.5}}
+    variants={{
+      show: {opacity: 0.8},
+      hidden: {opacity: 0},
+    }}
+    initial="hidden"
+    animate="show">
       <Widget.Header>
         Tela de Resultado:
       </Widget.Header>
       <Widget.Content>
         <p>
-          Você acertou
-          {results.filter((x) => x).length} perguntas
+          Você acertou{" "}
+          {results.filter((x) => x).length}{" "} de 10 perguntas!
         </p>
         <ul>
           {results.map((result, index) => (
             <li key={`result__${result}`}>
-              #
+              •{" "}
               {index + 1}
-              Resultado:
-              {result === true ? 'Acertou' : 'Errou'}
+              {" "}Resultado:
+              {result === true ? ' Acertou' : ' Errou'}
             </li>
           ))}
         </ul>
@@ -35,7 +43,14 @@ function ResultWidget({ results }) {
 
 function LoadingWidget() {
   return (
-    <Widget>
+    <Widget as={motion.section}
+    transition={{ delay: 0.5, duration: 0.5}}
+    variants={{
+      show: {opacity: 0.8},
+      hidden: {opacity: 0},
+    }}
+    initial="hidden"
+    animate="show">
       <Widget.Header>
         Desafio....
       </Widget.Header>
@@ -52,7 +67,14 @@ function QuestionWidget({question, questionIndex, totalQuestions, onSubmit, addR
   const hasAlternativeSelected = selectedAlternative !== undefined;
 
   return (
-    <Widget>
+    <Widget as={motion.section}
+    transition={{ delay: 0.5, duration: 0.5}}
+    variants={{
+      show: {opacity: 0.8},
+      hidden: {opacity: 0},
+    }}
+    initial="hidden"
+    animate="show">
       <Widget.Header>
         <h3>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h3>
       </Widget.Header>
@@ -71,11 +93,11 @@ onSubmit={(infoEvent) => {
     onSubmit();
     setIsQuestionSubmited(false);
     setSelectedAlternative(undefined);
-  }, 3 * 1000);
+  }, 1 * 1500);
 }} >
   {question.alternatives.map((alternative, alternativeIndex) => {
     const alternativeId = `alternative__${alternativeIndex}`;
-    const alternativeStatus = isCorrect ? 'SUCCESS': 'ERROR';
+    const selectedAlternativeStatus = isCorrect ? 'SUCCESS': 'ERROR';
     const isSelected = selectedAlternative === alternativeIndex;
     return (
       <Widget.Topic
@@ -83,7 +105,7 @@ onSubmit={(infoEvent) => {
       key={alternativeId}
       htmlFor={alternativeId}
       data-selected={isSelected}
-      data-status={isQuestionSubmited && alternativeStatus} >
+      data-status={isQuestionSubmited && selectedAlternativeStatus} >
         <input style={{ display: 'none'}} id={alternativeId} name={questionId} onChange={() => setSelectedAlternative(alternativeIndex)} type="radio" /> {alternative}
       </Widget.Topic>
     );
@@ -106,9 +128,9 @@ const screenStates = {
 
 export default function QuizPage() {
   const [screenState, setScreenState] = useState(screenStates.LOADING);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   const [results, setResults] = useState([]);
   const totalQuestions = db.questions.length;
-  const [currentQuestion, setCurrentQuestion] = useState(0);
   const questionIndex = currentQuestion;
   const question = db.questions[questionIndex];
 
@@ -122,7 +144,7 @@ export default function QuizPage() {
   useEffect(() => {
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
-    }, 1 * 1000);
+    }, 1 * 1500);
   }, []);
 
   function handleSubmitQuiz() {

@@ -7,6 +7,9 @@ const FooterWrapper = styled.footer`
   align-items: center;
   border-radius: 4px;
   opacity: 0.8;
+  width: 350px;
+  margin: 0 138px;
+  height: 55px;
   img {
     width: 58px;
     margin-right: 21px;
@@ -29,6 +32,13 @@ const FooterWrapper = styled.footer`
     font-size: 13.5px;
     text-align: center;
   }
+
+
+@media (max-width: 600px){
+  margin: 0 auto;
+  width: 321px;
+  height: 75px;
+}
 `;
 
 export default function Footer(props) {

@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const QuizLogo = styled(Logo) `
-margin: auto;
-display: block;
+    margin: 15px 50px 0px;
+    display: flex;
+    width: 85px;
+    transform: rotate(335deg);
 @media screen and (max-width: 500px) {
-  margin: 0;
+  margin: 0 10px;
 }
 `;
 

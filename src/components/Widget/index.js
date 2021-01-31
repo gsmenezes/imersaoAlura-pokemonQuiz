@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 const Widget = styled.div`
-  margin: 24px 0;
+  margin: 0 0 24px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
   background-color: #33658a;
-  opacity: 0.9;
+  opacity: 0.8;
   border-radius: 4px;
   overflow: hidden;
 
@@ -23,7 +23,7 @@ const Widget = styled.div`
 `;
 
 Widget.Content = styled.div`
-  padding: 24px 32px 32px 32px;
+  padding: 20px 32px;
 
   & > *:first-child {
     margin-top: 0;
