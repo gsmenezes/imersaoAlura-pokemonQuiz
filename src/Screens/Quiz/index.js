@@ -34,14 +34,16 @@ function ResultWidget({ results, totally }) {
         <h4>
           {totally < 6
             ? "Que pena.. acho que você precisa estudar um pouquinho mais sobre os Vikings!"
-            : totally >= 6 || totally <= 10
+            : totally >= 6 && totally <= 10
             ? "Legal!! Você sabe quase tudo sobre os Vikings."
-            : "Uauuuu!! Você sabe tudo sobre os Vikings.. Assiste as séries ou prestou atenção nas aulas de história? ;) Nunca saberemos.. haha Parabéns."}
+            : totally >= 11
+            ? "Uauuuu!! Você sabe tudo sobre os Vikings.. Assiste as séries ou prestou atenção nas aulas de história? ;) Nunca saberemos.. haha Parabéns."
+            : "Deu bug aqui =/"}
         </h4>
       </Widget.Content>
       <Widget.Footer>
         <Button>
-          <Link href="/">Voltar para a Home</Link>
+          <a href="/">Voltar para a Home</a>
         </Button>
       </Widget.Footer>
     </Widget.Result>
@@ -50,11 +52,15 @@ function ResultWidget({ results, totally }) {
 function LoadingWidget() {
   return (
     <Lottie
-      width="1150px"
-      align="center"
-      height="100vh"
       className="lottie-container basic"
       config={{ animationData: loadingAnimation, loop: true, autoplay: true }}
+      style={{
+        width: "400px",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        margin: "0 -10%",
+      }}
     />
   );
 }

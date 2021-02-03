@@ -26,6 +26,11 @@ cursor: pointer;
   background-color:${({ theme }) => theme.colors.tertiary};
   cursor: not-allowed;
 }
+
+a{
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.contrastText};
+}
 `;
 
 Button.propTypes = {

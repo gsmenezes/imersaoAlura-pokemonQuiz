@@ -14,7 +14,7 @@ box-sizing: border-box;
   padding: 0;
   display: flex;
   flex-direction: column;
-  font-family: 'Yusei Magic', sans-serif;
+  font-family: 'Catamaran', sans-serif;
   color: ${({ theme }) => theme.colors.contrastText};
   overflow: hidden;
   }
@@ -45,7 +45,7 @@ export default function App({ Component, pageProps }) {
       <Head>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500&display=swap"
           rel="stylesheet"
         />
         <link rel="icon" href="./images/icon.png" />
