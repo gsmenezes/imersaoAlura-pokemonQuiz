@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Widget = styled.div`
-  margin: 0 0 24px;
+  margin: 0 0 12px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
   background-color: #33658a;
   opacity: 0.8;
@@ -12,7 +12,7 @@ const Widget = styled.div`
   h2,
   h3 {
     font-size: 1rem;
-    line-height: 1rem;
+    line-height: 1.5rem;
     margin-bottom: 0;
   }
 
@@ -23,7 +23,7 @@ const Widget = styled.div`
 `;
 
 Widget.Content = styled.div`
-  padding: 20px 32px;
+  padding: 15px 32px;
 
   & > *:first-child {
     margin-top: 0;
@@ -47,9 +47,18 @@ Widget.Header = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 18px 32px;
+  padding: 6px 32px 18px;
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.text2};
+`;
+
+Widget.Footer = styled.div `
+display: flex;
+justify-content: flex-start;
+align-items: center;
+padding: 18px 32px;
+background-color: ${({ theme }) => theme.colors.primary};
+color: ${({ theme }) => theme.colors.text2};
 `;
 
 Widget.Topic = styled.a `
@@ -69,5 +78,51 @@ display: block;
   opacity: 0.5;
 }
  `;
+
+ Widget.Quiz = styled.div `
+ margin: 50px auto;
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  background-color: #33658a;
+  opacity: 0.8;
+  border-radius: 4px;
+  overflow: hidden;
+
+  h1,
+  h2,
+  h3 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1rem;
+  }
+
+  `;
+
+Widget.Result = styled.div `
+margin: 50px auto;
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  background-color: #33658a;
+  opacity: 0.8;
+  border-radius: 4px;
+  overflow: hidden;
+
+  h1,
+  h2,
+  h3 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1rem;
+  }
+
+`;
 
 export default Widget;

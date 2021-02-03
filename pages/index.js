@@ -7,6 +7,7 @@ import Button from "../src/components/Button";
 import Footer from "../src/components/Footer";
 import GitHubCorner from "../src/components/GitHubCorner";
 import Input from "../src/components/Input";
+import Link from '../src/components/Link';
 import QuizBackground from "../src/components/QuizBackground";
 import QuizContainer from "../src/components/QuizContainer";
 import QuizLogo from "../src/components/QuizLogo";
@@ -66,33 +67,39 @@ export default function Home() {
             <h1>Quizes da Galera</h1>
           </Widget.Header>
           <Widget.Content>
-            <a
-              href="https://naruto-quiz.llofyy.vercel.app/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {" "}
-              <p>Naruto Quiz</p>{" "}
-            </a>
-            <a
-              href="https://historyquiz.vercel.app/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <p>History Quiz</p>
-            </a>
-            <a
-              href="https://hogwarts-quiz.juliocarvalhos.vercel.app/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <p>Hogwarts Quiz</p>
-            </a>
+           <ul>
+             {db.external.map((externalLink) => {
+               const [projectName, githubUser] = externalLink
+               .replace(/\//g, '')
+               .replace('https:', '')
+               .replace('.vercel.app', '')
+               .split('.');
+
+               return(
+                 <li key={externalLink}>
+                   <Widget.Topic
+                   as={Link}
+                   href={`/quiz/${projectName}___${githubUser}`}>
+                      {`${githubUser}/${projectName}`}
+                   </Widget.Topic>
+                 </li>
+               );
+             })}
+           </ul>
           </Widget.Content>
         </Widget>
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/gsmenezes" />
-      <Footer />
+      <Footer as={motion.footer}
+        transition={{ delay: 1, duration: 0.5 }}
+        variants={{
+          show: { opacity: 0.8 },
+          hidden: { opacity: 0 },
+        }}
+        initial="hidden"
+        animate="show"
+
+      />
     </QuizBackground>
   );
 }

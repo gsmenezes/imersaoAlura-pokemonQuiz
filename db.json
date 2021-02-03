@@ -1,32 +1,127 @@
 {
   "bg": "./images/tempestade.jpg",
+  "bg2":"./images/neblina.jpg",
+  "bg3":"./images/vikings2.jpg",
   "title": "The Vikings Quiz",
   "description": "Você sabe tudo sobre os Vikings?",
   "questions": [
     {
-      "image": "",
-      "title": "",
-      "description": "",
-      "answer": 0,
+      "title": "De onde vieram os Vikings?",
+      "answer": 3,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+         "Noruega",
+         "Dinamarca",
+         "Suécia",
+         "Todas as respostas anteriores"
       ]
     },
     {
-      "image": "",
-      "title": "",
-      "description": "",
+      "title": "Quem era o principal deus da mitologia nórdica?",
+      "answer": 4,
+      "alternatives": [
+        "Thor",
+        "Loki",
+        "Njord",
+        "Heimdall",
+        "Odin"
+      ]
+    },
+    {
+      "title": "Quando ocorreu o primeiro ataque dos Vikings no Reino Unido?",
+      "answer": 1,
+      "alternatives": [
+         "434 d.C.",
+         "787 d.C.",
+         "956 d.C.",
+         "1206 d.C,"
+      ]
+    },
+    {
+      "title": "Para onde os Vikings acreditavam que iriam depois de morrer?",
+      "answer": 2,
+      "alternatives": [
+         "Avalon",
+         "Tártaro",
+         "Valhalla",
+         "Niflheim"
+      ]
+    },
+    {
+      "title": "Que religião teve a maior influência sobre os Vikings?",
       "answer": 0,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+         "Cristianismo",
+         "Islamismo",
+         "Judaísmo",
+         "Budismo"
+      ]
+    },
+    {
+      "title": "Aproximadamente, quando a Era dos Vikings teve seu fim na Europa?",
+      "answer": 2,
+      "alternatives": [
+         "400 d.C.",
+         "800 d.C.",
+         "1100 d.C.",
+         "1400 d.C"
+      ]
+    },
+    {
+      "title": "Que famoso Viking foi o Rei da Noruega, Dinamarca, partes da Suécia e da Inglaterra?",
+      "answer": 0,
+      "alternatives": [
+         "Canuto, o Grande",
+         "Érico Machado Sangrento",
+         "Bjorn Flanco de Ferro",
+         "Ragnar Calças de Pelos"
+      ]
+    },
+    {
+      "title": "Por que os Vikings frequentemente atacavam mosteiros?",
+      "answer": 3,
+      "alternatives": [
+         "Os mosteiros quase sempre estavam indefesos",
+         "Os monges serviam como escravos para os Vikings",
+         "Os mosteiros eram cheios de tesouros e suprimentos úteis",
+         "Todas as respostas anteriores"
+      ]
+    },
+    {
+      "title": "Como são chamadas as letras Vikings?",
+      "answer": 1,
+      "alternatives": [
+         "Hieróglifos",
+         "Runas",
+         "Itálico",
+         "Espiral"
+      ]
+    },
+    {
+      "title": "Qual destes itens você NÃO conseguiria comprar em um mercado Viking?",
+      "answer": 3,
+      "alternatives": [
+         "Maçãs",
+         "Conchas",
+         "Âmbar",
+         "Batatas"
+      ]
+    },
+    {
+      "title": "Que pássaros ficavam no trono de Odin?",
+      "answer": 1,
+      "alternatives": [
+         "Corujas",
+         "Corvos",
+         "Águias",
+         "Falcões"
       ]
     }
   ],
-  "external": [""],
+  "external": [
+    "https://naruto-quiz.llofyy.vercel.app/",
+    "https://historyquiz.vercel.app/",
+    "https://hogwarts-quiz.juliocarvalhos.vercel.app/"
+  ],
   "theme": {
     "colors": {
       "primary": "#0a0908",

@@ -10,6 +10,7 @@ border: 0;
 width: 100%;
 padding: 10px 16px;
 font-size: 0.875rem;
+font-weight: bold;
 line-height: 1rem;
 text-transform: uppercase;
 outline: 0;
